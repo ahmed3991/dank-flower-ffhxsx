@@ -820,7 +820,8 @@ app.controller('ComplexController', function ($scope, $controller, $sce, $rootSc
         /*previewService.pushData({"form":[{"section_design":{"fold":false}},{"section_upload":{"fold":false}},{"section_basic_info":{"fold":false}},{"section_welcome_screen":{"fold":true}}],"code":{"files":[{"name":"3n-01.jpg","type":"image\/jpeg","size":744713,"progress":100,"url":"https:\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account34982649\/46212958_1.jpg?0.6004103321447911"}],"images":[{"url":"https:\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account34982649\/46212958_1.jpg?0.6004103321447911","name":"3n-01.jpg","caption":"","progress":100,"width":2480,"height":3508}],"useGridView":false,"color1":"#ffffff","color2":"#3c4245","welcome_extra":{"zoom":50,"background":"#ffffff"},"button":{"url":""}},"showPreview":0,"welcome_screen":"https:\/\/s3.eu-central-1.amazonaws.com\/qrcgappcdn\/gallery-solution\/welcome.png"});*/
         
         var url = $window.location.href;
-        console.log(url)
+        var id = url.split('-').pop();
+        console.log(id)
         previewService.pushData({
     "form": [
         {"section_design": {"fold": false}},
@@ -835,12 +836,12 @@ app.controller('ComplexController', function ($scope, $controller, $sce, $rootSc
                 "type": "image/jpeg",
                 "size": 744713,
                 "progress": 100,
-                "url": "/images/tasrih.png"
+                "url": "/images/tasrih_"+id+".png"
             }
         ],
         "images": [
             {
-              "url": "/images/tasrih.png",
+              "url": "/images/tasrih_"+id+".png",
                 "name": "3n-01.jpg",
                 "caption": "",
                 "progress": 100,
